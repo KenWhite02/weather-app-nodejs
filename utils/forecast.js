@@ -6,9 +6,7 @@ const forecast = (latitude, longitude, callback) => {
   const lat = latitude.toFixed(3);
   const long = longitude.toFixed(3);
 
-  const url = `http://api.weatherstack.com/forecast?access_key=${weatherKey}&query=${
-    (lat, long)
-  }`;
+  const url = `http://api.weatherstack.com/forecast?access_key=${weatherKey}&query=${lat},${long}`;
 
   request({ url, json: true }, (error, response) => {
     if (error) {

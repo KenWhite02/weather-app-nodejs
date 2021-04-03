@@ -6,8 +6,8 @@ const address = process.argv[2];
 if (!address) {
   console.log('Please provide a location!');
 } else {
+  console.log('Loading...');
   geocode(address, (error, geocodeData) => {
-    console.log('Loading...');
     if (error) {
       return console.log(error);
     }
@@ -19,7 +19,7 @@ if (!address) {
           return console.log(error);
         }
 
-        console.log(geocode.location);
+        console.log(geocodeData.location);
         console.log(forecastData);
       }
     );
